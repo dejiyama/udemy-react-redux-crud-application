@@ -15,17 +15,27 @@ import React from 'react';
 // }
 
 const App = () => {
+	const profiles = [{ name: 'taro', age: 10 }, { name: 'hanako', age: 5 }, { name: 'Noname' }, { age: 0 }];
 	return (
 		<div>
-			<Cat />
-			<Cat />
-			<Cat />
+			{profiles.map((profile, index) => {
+				return <User name={profile.name} age={profile.age} key={index} />;
+			})}
 		</div>
 	);
 };
 
-const Cat = () => {
-	return <div>meow!</div>;
+const User = props => {
+	return (
+		<div>
+			hi, i am {props.name}, and {props.age} years old!
+		</div>
+	);
+};
+
+User.defaultProps = {
+	age: 1,
+	name: 'dejiyama'
 };
 
 export default App;
