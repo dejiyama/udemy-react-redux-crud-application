@@ -4,9 +4,9 @@ import './index.css';
 import App from './components/App.js';
 import * as serviceWorker from './serviceWorker';
 import { createStore }  from 'redux'
-import { Provider } from 'redux'
+import { Provider } from 'react-redux'
 import reducer from './reducers'
-import reducers from './reducers';
+
 
 const store = createStore (reducer) 
 
